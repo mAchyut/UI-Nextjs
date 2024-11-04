@@ -3,65 +3,65 @@ import Link from "next/link";
 import { HoverEffect } from "./ui/card-hover-effect";
 
 function UpcomingWebinars() {
-  const musicalEvents = [
+  const designEvents = [
     {
-      title: "Indian Classical Music Festival",
+      title: "User Experience Design Bootcamp",
       description:
-        "Join us for a vibrant celebration of Indian classical music featuring renowned artists performing ragas, thumris, and more.",
-      slug: "indian-classical-music-festival",
+        "Join us for an intensive bootcamp focused on the principles of user experience design, featuring hands-on workshops and expert-led sessions.",
+      slug: "user-experience-design-bootcamp",
       isFeatured: true,
     },
     {
-      title: "Sitar Masterclass with Ravi Shankar",
+      title: "Typography and Branding Workshop",
       description:
-        "An exclusive opportunity to learn from the legendary sitar maestro, Ravi Shankar. This masterclass will cover techniques, improvisation, and the rich history of the sitar in Indian music.",
-      slug: "sitar-masterclass-ravi-shankar",
+        "Learn the importance of typography in branding with this comprehensive workshop, covering design principles, font selection, and brand identity.",
+      slug: "typography-branding-workshop",
       isFeatured: true,
     },
     {
-      title: "Tabla Recital by Zakir Hussain",
+      title: "Responsive Web Design Essentials",
       description:
-        "Experience an unforgettable evening with tabla virtuoso Zakir Hussain as he performs a solo recital, diving into the intricate rhythms and captivating stories conveyed through the tabla.",
-      slug: "tabla-recital-zakir-hussain",
+        "Discover the best practices for creating responsive websites that adapt seamlessly to different devices and screen sizes.",
+      slug: "responsive-web-design-essentials",
       isFeatured: false,
     },
     {
-      title: "Annual Raga Fest",
+      title: "Color Theory for Designers",
       description:
-        "Celebrate the diversity of Indian classical music at the Annual Raga Fest, featuring performances by various artists, workshops, and discussions about the significance of ragas.",
-      slug: "annual-raga-fest",
+        "Dive into color theory and learn how to effectively use color in your designs to evoke emotions and convey messages.",
+      slug: "color-theory-for-designers",
       isFeatured: true,
     },
     {
-      title: "Vocal Mastery Workshop",
+      title: "Design Thinking Workshop",
       description:
-        "Enhance your vocal skills with expert guidance in this interactive workshop led by esteemed vocalists, focusing on technique, expression, and performance.",
-      slug: "vocal-mastery-workshop",
+        "Enhance your problem-solving skills with our interactive design thinking workshop, focusing on user-centered approaches and creative ideation.",
+      slug: "design-thinking-workshop",
       isFeatured: false,
     },
     {
-      title: "Bansuri Concert Under the Stars",
+      title: "Creative Illustration Techniques",
       description:
-        "Enjoy a magical evening of bansuri music performed by acclaimed artist Hariprasad Chaurasia, creating a memorable experience under the stars.",
-      slug: "bansuri-concert-under-the-stars",
+        "Explore various illustration techniques in this hands-on session, designed for both beginners and experienced artists.",
+      slug: "creative-illustration-techniques",
       isFeatured: true,
     },
     {
-      title: "Fusion Music Night",
+      title: "Sustainable Design Practices",
       description:
-        "Join us for a unique fusion of Indian classical music and contemporary genres, featuring collaborations between traditional artists and modern musicians.",
-      slug: "fusion-music-night",
+        "Learn about sustainable design principles and how to incorporate eco-friendly practices into your design projects.",
+      slug: "sustainable-design-practices",
       isFeatured: false,
     },
     {
-      title: "Veena Recital Series",
+      title: "Motion Design Fundamentals",
       description:
-        "A series of intimate veena recitals featuring some of the finest veena players in the country, showcasing the rich tones and intricate melodies of this beautiful instrument.",
-      slug: "veena-recital-series",
+        "An engaging introduction to motion design, exploring the tools and techniques for creating captivating animations.",
+      slug: "motion-design-fundamentals",
       isFeatured: true,
     },
   ];
-  const featuredCards = musicalEvents.filter((card) => card?.isFeatured);
+  const featuredCards = designEvents.filter((card) => card?.isFeatured);
 
   return (
     <div className="p-12 bg-gray-900">
@@ -70,7 +70,7 @@ function UpcomingWebinars() {
           <h2 className="text-base text-teal-600 font-semibold tracking-wide uppercase">
             FEATURED WEBINARS
           </h2>
-          <p>Enchance Your Musical Journey</p>
+          <p>Enhance Your Design Skills</p>
         </div>
         <div className="mt-10">
           {

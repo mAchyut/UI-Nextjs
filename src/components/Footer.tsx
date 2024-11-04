@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-lg font-bold mb-4">About Us</h3>
           <p className="text-sm">
-            At Our Music Academy, we nurture talent and foster a love for music through expert instruction and creative exploration.
+            At Our Design Studio, we believe in the power of creativity and innovation to transform ideas into visually compelling designs.
           </p>
         </div>
         <div>
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <ul className="text-sm space-y-2">
             <li><a href="#" className="hover:underline">Home</a></li>
             <li><a href="#" className="hover:underline">Courses</a></li>
-            <li><a href="#" className="hover:underline">Events</a></li>
+            <li><a href="#" className="hover:underline">Portfolio</a></li>
             <li><a href="#" className="hover:underline">Contact</a></li>
           </ul>
         </div>
@@ -24,18 +24,18 @@ const Footer: React.FC = () => {
           <ul className="text-sm space-y-2">
             <li><a href="#" className="hover:underline">Facebook</a></li>
             <li><a href="#" className="hover:underline">Instagram</a></li>
-            <li><a href="#" className="hover:underline">YouTube</a></li>
+            <li><a href="#" className="hover:underline">Behance</a></li>
             <li><a href="#" className="hover:underline">Twitter</a></li>
           </ul>
         </div>
         <div>
           <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-          <p className="text-sm">Email: info@musicacademy.com</p>
+          <p className="text-sm">Email: info@designstudio.com</p>
           <p className="text-sm">Phone: (123) 456-7890</p>
-          <p className="text-sm">Address: 456 Harmony Blvd, Music City, USA</p>
+          <p className="text-sm">Address: 456 Design Ave, Creativity City, USA</p>
         </div>
       </div>
-      <p className='text-xs text-center mt-8 text-gray-500 pt-4'>&copy;{new Date().getFullYear()} Music Academy. All rights reserved.</p>
+      <p className='text-xs text-center mt-8 text-gray-500 pt-4'>&copy;{new Date().getFullYear()} Design Studio. All rights reserved.</p>
     </footer>
   );
 };

@@ -17,12 +17,7 @@ export const StickyScroll = ({
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
-  const { scrollYProgress } = useScroll({
-    // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
-    container: ref,
-    offset: ["start start", "end start"],
-  });
+  const { scrollYProgress } = useScroll({ container: ref });
   const cardLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -30,10 +25,7 @@ export const StickyScroll = ({
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
-        if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-          return index;
-        }
-        return acc;
+        return distance < Math.abs(latest - cardsBreakpoints[acc]) ? index : acc;
       },
       0
     );
@@ -45,6 +37,7 @@ export const StickyScroll = ({
     "var(--black)",
     "var(--neutral-900)",
   ];
+  
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
     "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
@@ -61,61 +54,65 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-    animate={{
-      backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-    }}
-    className="h-[30rem] overflow-y-auto flex justify-around relative space-x-10 rounded-md p-10 custom-scrollbar"
-    ref={ref}
-    style={{
-      scrollbarWidth: 'none', // For Firefox
-      msOverflowStyle: 'none', // For Internet Explorer and Edge
-    }}
-  >
-    <div className="relative flex items-start px-4">
-      <div className="max-w-2xl">
-        {content.map((item, index) => (
-          <div key={item.title + index} className="my-20">
-            <motion.h2
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: activeCard === index ? 1 : 0.3,
-              }}
-              className="text-2xl font-bold text-slate-100"
-            >
-              {item.title}
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: activeCard === index ? 1 : 0.3,
-              }}
-              className="text-kg text-slate-300 max-w-sm mt-10"
-            >
-              {item.description}
-            </motion.p>
-          </div>
-        ))}
-        <div className="h-40" />
-      </div>
-    </div>
-    <div
-      style={{ background: backgroundGradient }}
-      className={cn(
-        "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
-        contentClassName
-      )}
+      animate={{
+        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
+      }}
+      className="h-[30rem] overflow-y-auto flex justify-around relative space-x-8 rounded-lg p-8 shadow-md custom-scrollbar"
+      ref={ref}
+      style={{
+        scrollbarWidth: 'none', // For Firefox
+        msOverflowStyle: 'none', // For IE and Edge
+      }}
     >
-      {content[activeCard].content ?? null}
-    </div>
-  
-    {/* Scoped style for hiding scrollbar in this component */}
-    <style>
-      {`
-        .custom-scrollbar::-webkit-scrollbar {
-          display: none; /* For Chrome, Safari, and Opera */
-        }
-      `}
-    </style>
-  </motion.div>
+      <div className="relative flex items-start px-4">
+        <div className="max-w-2xl">
+          {content.map((item, index) => (
+            <div key={item.title + index} className="my-20 transition-transform duration-300">
+              <motion.h2
+                initial={{ opacity: 0, y: -10 }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.5,
+                  y: activeCard === index ? 0 : -10,
+                  transition: { duration: 0.5 },
+                }}
+                className="text-2xl font-bold text-slate-100"
+              >
+                {item.title}
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: -10 }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.5,
+                  y: activeCard === index ? 0 : -10,
+                  transition: { duration: 0.5 },
+                }}
+                className="text-kg text-slate-300 max-w-sm mt-10"
+              >
+                {item.description}
+              </motion.p>
+            </div>
+          ))}
+          <div className="h-40" />
+        </div>
+      </div>
+      <div
+        style={{ background: backgroundGradient }}
+        className={cn(
+          "hidden lg:block h-60 w-80 rounded-md sticky top-10 overflow-hidden shadow-lg",
+          contentClassName
+        )}
+      >
+        {content[activeCard].content ?? null}
+      </div>
+
+      {/* Scoped style for hiding scrollbar in this component */}
+      <style>
+        {`
+          .custom-scrollbar::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+          }
+        `}
+      </style>
+    </motion.div>
   );
 };

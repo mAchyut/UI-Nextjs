@@ -2,72 +2,75 @@
 import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
-const musicContent = [
+const designContent = [
     {
-        title: "Hindustani Classical Music",
-        description: "Originating from North India, Hindustani classical music is characterized by its improvisational nature and complex rhythms. It is traditionally performed using instruments like the sitar, tabla, and sarod, with vocal styles that emphasize raga and tala."
+        title: "Minimalist Design",
+        description: "Minimalist design emphasizes simplicity and functionality. It uses a limited color palette and clean lines to create visually appealing spaces that focus on the essentials."
     },
     {
-        title: "Carnatic Classical Music",
-        description: "Emerging from South India, Carnatic classical music is known for its rich melodic framework and intricate compositions. It places a strong emphasis on vocal music, even when instrumental, with prominent instruments including the veena, mridangam, and flute."
+        title: "User-Centered Design",
+        description: "User-centered design is a framework that prioritizes the needs and preferences of users. It involves research and testing to create products that enhance user experience."
     },
     {
-        title: "Raga",
-        description: "A raga is a melodic framework used in Indian classical music, consisting of specific notes and rules for their use. Each raga evokes a particular mood or emotion and is often associated with a time of day or season."
+        title: "Responsive Design",
+        description: "Responsive design ensures that websites function seamlessly across various devices and screen sizes. It adapts layouts and elements for optimal viewing on desktops, tablets, and smartphones."
     },
     {
-        title: "Tala",
-        description: "Tala refers to the rhythmic aspect of Indian classical music. It involves specific cycles of beats, providing a structured time framework for performances. Common talas include Teentaal and Ektaal, each with its own unique pattern."
+        title: "Typography",
+        description: "Typography is the art of arranging type to make written language legible, readable, and visually appealing. It plays a crucial role in establishing a design's tone and style."
     },
     {
-        title: "Dhrupad",
-        description: "Dhrupad is one of the oldest forms of Hindustani classical music, characterized by its solemnity and depth. It often features a slow, meditative opening (alaap) followed by rhythmic sections that showcase intricate vocal and instrumental techniques."
+        title: "Color Theory",
+        description: "Color theory explores how colors interact, combine, and impact design. Understanding color harmony is essential for creating designs that evoke specific emotions and responses."
     },
     {
-        title: "Bhajan",
-        description: "A bhajan is a devotional song in Indian classical music, often dedicated to a deity. These songs can be simple or complex and are performed in various styles, emphasizing spirituality and emotional expression."
+        title: "Branding",
+        description: "Branding encompasses the visual identity of a company, including logos, color schemes, and typography. A strong brand creates recognition and trust among consumers."
     },
     {
-        title: "Gharana",
-        description: "A gharana is a musicological term that refers to a particular school or style of Indian classical music. Each gharana has its own unique techniques and interpretations, often passed down through generations of musicians."
+        title: "UI/UX Design",
+        description: "UI (User Interface) and UX (User Experience) design focus on creating intuitive and engaging digital products. They work together to ensure that users have a positive interaction with the interface."
     },
     {
-        title: "Vocal Styles",
-        description: "Indian classical music features various vocal styles, including Dhrupad, Khayal, Thumri, and Tappa. Each style has distinct characteristics, emotional expressions, and performance contexts."
+        title: "Sustainable Design",
+        description: "Sustainable design promotes environmentally friendly practices and materials. It aims to reduce waste and energy consumption, fostering a more sustainable future in design."
     },
     {
-        title: "Instruments",
-        description: "Indian classical music utilizes a wide range of instruments, including string instruments like the sitar and sarangi, percussion instruments like the tabla and mridangam, and wind instruments like the bansuri and shehnai."
+        title: "Visual Hierarchy",
+        description: "Visual hierarchy refers to the arrangement of design elements to guide viewers’ attention. It involves using size, color, and layout to prioritize information effectively."
     },
     {
-        title: "Fusion",
-        description: "Fusion music blends Indian classical elements with various genres, such as jazz, rock, and electronic music. This genre highlights the adaptability of Indian classical music and introduces it to new audiences."
+        title: "Motion Design",
+        description: "Motion design incorporates animation into graphic design, adding a dynamic element that can enhance storytelling and engage audiences in a unique way."
     },
     {
-        title: "Composers",
-        description: "Prominent composers in Indian classical music include Tansen, Miyan Tansen, and contemporary figures like Ravi Shankar and Zakir Hussain, who have significantly influenced the evolution and global appreciation of this art form."
+        title: "Illustration",
+        description: "Illustration adds a creative flair to design projects, allowing for unique storytelling and personalization. It can range from hand-drawn art to digital graphics."
     },
     {
-        title: "Music Festivals",
-        description: "India hosts numerous classical music festivals, such as the Dover Lane Music Conference and the Sawai Gandharva Bhimsen Mahotsav. These events celebrate and promote the rich heritage of Indian classical music."
+        title: "Design Thinking",
+        description: "Design thinking is a problem-solving approach that focuses on understanding users’ needs, prototyping solutions, and iterating based on feedback to create effective designs."
     },
     {
-        title: "Raga Malika",
-        description: "Raga Malika is a composition that combines multiple ragas within a single performance. It showcases the versatility of the artist and offers listeners a rich auditory experience."
+        title: "Accessibility",
+        description: "Accessibility in design ensures that products are usable by people of all abilities and disabilities. It involves creating inclusive designs that consider diverse user needs."
     },
     {
-        title: "Khayal",
-        description: "Khayal is a prominent form of Hindustani vocal music characterized by its improvisational nature. It allows for extensive exploration of ragas and is known for its expressive melodies and intricate rhythmic patterns."
+        title: "Graphic Design",
+        description: "Graphic design is the process of visual communication using typography, imagery, and color. It encompasses various forms, including print, digital, and advertising."
+    },
+    {
+        title: "Design Trends",
+        description: "Staying updated with design trends is vital for any designer. Trends evolve over time, influencing aesthetics and functionality in contemporary design."
     }
-]
-
+];
 
 function WhyChooseUs() {
   return (
     <div>
-        <StickyScroll content={musicContent}/>
+        <StickyScroll content={designContent} />
     </div>
-  )
+  );
 }
 
-export default WhyChooseUs
+export default WhyChooseUs;
