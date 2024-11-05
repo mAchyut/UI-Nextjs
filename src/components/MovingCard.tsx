@@ -1,8 +1,14 @@
 'use client';
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
+type Designquotes = {
+    quote: string,
+    name: string,
+    title: string
+}
+
 function MovingCard() {
-    const designQuotes = [
+    const designQuotes: Designquotes[] = [
         {
             quote: "Design is not just what it looks like and feels like. Design is how it works. A great design seamlessly blends form and function, creating a user experience that is both intuitive and delightful.",
             name: "Steve Jobs",

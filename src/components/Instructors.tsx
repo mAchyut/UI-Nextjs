@@ -3,8 +3,15 @@
 import { AnimatedTooltip } from "./ui/animated-tooltip";
 import { WavyBackground } from "./ui/wavy-background"
 
+type Instructor = {
+    id: number;
+    name: string;
+    designation: string;
+    image: string;
+};
+
 function Instructors() {
-    const instructors = [
+    const instructors: Instructor[] = [
         {
             id: 1,
             name: "Alice Johnson",

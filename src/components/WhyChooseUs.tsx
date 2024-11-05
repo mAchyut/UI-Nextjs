@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useMemo} from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
 const designContent = [
@@ -66,11 +66,17 @@ const designContent = [
 ];
 
 function WhyChooseUs() {
-  return (
-    <div>
-        <StickyScroll content={designContent} />
-    </div>
-  );
-}
-
-export default WhyChooseUs;
+    const memoizedContent = useMemo(() => designContent, []); 
+     return (
+         <div className="why-choose-us-container"> 
+         
+         <StickyScroll content={memoizedContent} /> 
+         
+         </div> 
+        
+        );
+    
+    }
+     
+     
+     export default WhyChooseUs;

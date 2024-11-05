@@ -2,8 +2,15 @@
 import Link from "next/link";
 import { HoverEffect } from "./ui/card-hover-effect";
 
+type DesignEvents = {
+  title: string,
+  description: string,
+  slug: string,
+  isFeatured: boolean
+}
+
 function UpcomingWebinars() {
-  const designEvents = [
+  const designEvents: DesignEvents[] = [
     {
       title: "User Experience Design Bootcamp",
       description:
